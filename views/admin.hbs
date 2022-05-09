@@ -16,8 +16,32 @@
         <div class="row">
             <div class="col">
                 <h1>ORDERS</h1>
-                <div class="table-responsive-sm"></div>
-
+                <div class="table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>ID</th>
+                            <th>ORDER</th>
+                            <th>TOTAL</th>
+                            <th> </th> 
+                            </tr>  
+                        </thead>
+                        <tbody>
+                            {{#each order}}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.order}}</td>
+                                <td>{{this.total}}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="/order/ {{this.id}}">Update</a>
+                                     <a class="btn btn-danger" href="/order/delete/ {{this.id}}">Delete</a>
+                                    
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
